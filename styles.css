@@ -252,8 +252,8 @@ body {
 /* Responsive: móviles pequeños */
 @media (max-width: 480px) {
   .container {
-    max-width: 98%;
-    padding: 20px 12px;
+    max-width: 90%;
+    padding: 16px 10px;
   }
   .titulo-animado {
     font-size: 1.8rem;

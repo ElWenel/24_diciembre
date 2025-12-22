@@ -52,7 +52,7 @@ function crearMonos() {
 
   const width = window.innerWidth || document.documentElement.clientWidth;
   let monos = 30;
-  if (width <= 420) monos = 15;
+  if (width <= 420) monos = 20;
   else if (width <= 768) monos = 25;
 
   for (let i = 0; i < monos; i++) {
@@ -62,10 +62,10 @@ function crearMonos() {
     mono.src = "monos/mono" + num + ".png";
     mono.style.left = Math.random() * 100 + "vw";
     const size =
-      Math.random() * (width <= 420 ? 40 : width <= 768 ? 50 : 60) +
-      (width <= 420 ? 35 : width <= 768 ? 40 : 45);
+      Math.random() * (width <= 420 ? 50 : width <= 768 ? 50 : 60) +
+      (width <= 420 ? 50 : width <= 768 ? 40 : 45);
     mono.style.width = size + "px";
-    const baseDur = width <= 420 ? 8 : width <= 768 ? 6 : 5;
+    const baseDur = width <= 420 ? 6 : width <= 768 ? 6 : 5;
     mono.style.animationDuration =
       (Math.random() * 4 + baseDur).toFixed(2) + "s";
     mono.style.opacity = (Math.random() * 0.3 + 0.7).toFixed(2);
