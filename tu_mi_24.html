@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi 24 de diciembre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #ffb6c1, #e6e6fa, #ff69b4);
+        min-height: 100vh;
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #333;
+        user-select: none;
+      }
+      .container {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 228, 225, 0.9)
+        );
+        border-radius: 25px;
+        padding: 50px;
+        max-width: 800px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        animation: fadeInUp 1s ease-out;
+        border: 2px solid rgba(255, 20, 147, 0.2);
+      }
+      h1 {
+        font-family: "Pacifico", cursive;
+        color: #ff1493;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        animation: fadeIn 1.5s ease-out 0.5s both;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        animation: fadeIn 1.5s ease-out 1s both;
+      }
+      .corazon {
+        font-size: 1.5rem;
+        color: #ff1493;
+        animation: fadeIn 1.5s ease-out 1.5s both;
+      }
+      .heart {
+        animation: heartbeat 1s infinite;
+        display: inline-block;
+      }
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Copos de nieve */
+      .snow {
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+      }
+      .snowflake {
+        position: absolute;
+        top: -40px;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.5em;
+        opacity: 0.9;
+        filter: drop-shadow(0 0 10px rgba(173, 216, 255, 0.12));
+        animation: snow-fall linear infinite;
+      }
+      @keyframes snow-fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="snow"></div>
+    <div class="container">
+      <h1>Mi 24 de diciembre!</h1>
+      <p>
+        De verdad eres una persona increible y me siento con mucha suerte de
+        haberte conocido. solo quiero seguir compartiendo momentos contigo y
+        poder verte feliz tq ♡.
+      </p>
+      <img
+        src="monos/mono10.png"
+        alt="Mono"
+        style="
+          width: 200px;
+          height: auto;
+          margin: 20px 0;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        "
+      />
+      <p></p>
+      <p class="corazon">
+        <span class="heart">❤️</span> Te quiero Geral, gracias por llegar a mi
+        vida <span class="heart">❤️</span>
+      </p>
+      <video
+        src="video/24diciembre.mp4"
+        controls
+        style="
+          max-width: 100%;
+          height: auto;
+          margin-top: 30px;
+          border-radius: 15px;
+          box-shadow: 0 5px 15px rgba(255, 20, 147, 0.2);
+          border: 1px solid #ff1493;
+        "
+      ></video>
+    </div>
+    <script>
+      // Copos de nieve
+      function crearCoposNieve() {
+        const snowContainer = document.querySelector(".snow");
+        if (!snowContainer) return;
+        const width = window.innerWidth || document.documentElement.clientWidth;
+        let snowflakes = 40;
+        if (width <= 420) snowflakes = 12;
+        else if (width <= 768) snowflakes = 20;
+        for (let i = 0; i < snowflakes; i++) {
+          const snowflake = document.createElement("span");
+          snowflake.className = "snowflake";
+          snowflake.textContent = "❄";
+          const size =
+            Math.random() * (width <= 420 ? 8 : width <= 768 ? 12 : 18) +
+            (width <= 420 ? 8 : 12);
+          snowflake.style.left = Math.random() * 100 + "vw";
+          snowflake.style.fontSize = size + "px";
+          const baseDur = width <= 420 ? 7 : width <= 768 ? 6 : 5;
+          snowflake.style.animationDuration =
+            (Math.random() * 3 + baseDur).toFixed(2) + "s";
+          snowflake.style.opacity = (
+            Math.random() * 0.4 +
+            (width <= 420 ? 0.6 : 0.5)
+          ).toFixed(2);
+          snowflake.style.animationDelay =
+            Math.random() * (width <= 420 ? 3 : 4) + "s";
+          snowContainer.appendChild(snowflake);
+        }
+      }
+      crearCoposNieve();
+    </script>
+  </body>
+</html>
