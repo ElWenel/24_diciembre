@@ -52,8 +52,8 @@ function crearMonos() {
 
   const width = window.innerWidth || document.documentElement.clientWidth;
   let monos = 30;
-  if (width <= 420) monos = 10;
-  else if (width <= 768) monos = 20;
+  if (width <= 420) monos = 15;
+  else if (width <= 768) monos = 25;
 
   for (let i = 0; i < monos; i++) {
     const mono = document.createElement("img");
@@ -62,8 +62,8 @@ function crearMonos() {
     mono.src = "monos/mono" + num + ".png";
     mono.style.left = Math.random() * 100 + "vw";
     const size =
-      Math.random() * (width <= 420 ? 30 : width <= 768 ? 45 : 60) +
-      (width <= 420 ? 25 : width <= 768 ? 35 : 45);
+      Math.random() * (width <= 420 ? 40 : width <= 768 ? 50 : 60) +
+      (width <= 420 ? 35 : width <= 768 ? 40 : 45);
     mono.style.width = size + "px";
     const baseDur = width <= 420 ? 8 : width <= 768 ? 6 : 5;
     mono.style.animationDuration =

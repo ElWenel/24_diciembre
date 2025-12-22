@@ -214,8 +214,8 @@ body {
 /* Responsive: móviles y tablets */
 @media (max-width: 768px) {
   .container {
-    max-width: 94%;
-    padding: 32px 20px;
+    max-width: 96%;
+    padding: 24px 16px;
   }
   .titulo-animado {
     font-size: 2.2rem;
@@ -246,6 +246,32 @@ body {
     width: 40px;
     opacity: 0.85;
     filter: drop-shadow(0 0 4px rgba(255, 20, 147, 0.15));
+  }
+}
+
+/* Responsive: móviles pequeños */
+@media (max-width: 480px) {
+  .container {
+    max-width: 98%;
+    padding: 20px 12px;
+  }
+  .titulo-animado {
+    font-size: 1.8rem;
+  }
+  .countdown {
+    gap: 8px;
+  }
+  .countdown div {
+    width: calc(50% - 6px);
+  }
+  #days,
+  #hours,
+  #minutes,
+  #seconds {
+    font-size: 1.5rem;
+  }
+  .label {
+    font-size: 0.9rem;
   }
 }
 
