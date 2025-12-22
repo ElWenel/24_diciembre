@@ -57,7 +57,7 @@ body {
 
 .countdown {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 28px;
   gap: 12px;
   flex-wrap: wrap;
