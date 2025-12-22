@@ -1,5 +1,5 @@
 // Copos de nieve animados
-const targetDate = new Date(Date.now() + 60000); // 1 minuto para probar
+const targetDate = new Date(Date.UTC(2025, 11, 24, 5, 0, 0)); // 24 de diciembre 2025, 00:00 hora peruana (UTC-5)
 function crearCoposNieve() {
   const snowContainer = document.querySelector(".snow");
   if (!snowContainer) return;
